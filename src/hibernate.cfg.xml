@@ -11,6 +11,7 @@
 		</property>
 		<property name="myeclipse.connection.profile">mysql</property>
 		<mapping resource="com/iceker/shop/model/Category.hbm.xml" />
+		<mapping resource="com/iceker/shop/model/Account.hbm.xml" />
 
 	</session-factory>
 

@@ -1,35 +1,19 @@
 package com.iceker.shop.service.impl;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Service;
 
 import com.iceker.shop.model.Category;
 import com.iceker.shop.service.CategoryService;
 import com.iceker.shop.utils.HibernateSessionFactory;
 
-public class CategoryServiceImpl implements CategoryService {
-
-	@Override
-	public void save(Category category) {
-		//通过刚刚生成的sessionFactory获取session  
-		getSession().save(category);       
-
-	}
-	
-	/*Spring和Hibernate整个后*/  
-    private SessionFactory sessionFactory; //定义一个sessionFactory  
-      
-    //当需要使用sessoinFactory的时候，Spring会将sessionFactory注入进来  
-    public void setSessionFactory(SessionFactory sessionFactory) {  
-        this.sessionFactory = sessionFactory;  
-    }    
-    protected Session getSession() {  
-        //从当前线程获取session，如果没有则创建一个新的session  
-        return sessionFactory.getCurrentSession();  
-    }  
-      
-    @Override //Spring和Hibernate整合后的情况  
-    public void update(Category category) {  
-        getSession().update(category);      
-    }  
-}
+@Service("categoryService")
+public class CategoryServiceImpl extends BaseServiceImpl<Category>  implements CategoryService {  
+	  
+    
+   
+}  
