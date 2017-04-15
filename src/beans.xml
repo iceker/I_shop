@@ -30,7 +30,7 @@
         
      	<context:component-scan base-package="com.iceker.shop.."/>  
 
-		
+		<bean id="sendAction" class="com.iceker.shop.action.SendAction" />
 		
         
         <!-- com.mchange.v2.c3p0.ComboPooledDataSource类在c3p0-0.9.5.1.jar包的com.mchange.v2.c3p0包中 -->  

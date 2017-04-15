@@ -5,6 +5,16 @@
   
 <struts>  
     <package name="shop" extends="struts-default">  
+    	<global-results>  
+            <result name="aindex">/WEB-INF/main/aindex.jsp</result>  
+        </global-results>  
+  
+        <!-- 省略其他action的配置……</span> -->  
+          
+        <!-- 用来完成系统 请求转发的action,所有的请求都交给execute-->  
+        <action name="send_*_*" class="sendAction">  
+            <result name="send">/WEB-INF/{1}/{2}.jsp</result>  
+        </action>  
         <!-- category_update.actiocan： 访问update方法 -->  
         <action name="category_*" class="categoryAction" method="{1}">  
             <result name="index">/index.jsp</result>  
